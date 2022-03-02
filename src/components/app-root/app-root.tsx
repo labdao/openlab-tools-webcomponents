@@ -10,7 +10,7 @@ import {
 export class AppRoot {
   render() {
     return (
-      <main class="flex flex-col bg-black w-screen h-screen items-center p-5">
+      <main class="flex flex-col bg-black w-screen h-screen h-min-content items-center p-5">
         <div class="flex-row">
           <openlab-button>📘 read the docs</openlab-button>
           <openlab-button>🧑‍🤝‍🧑 join our Discord</openlab-button>

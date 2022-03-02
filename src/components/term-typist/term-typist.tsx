@@ -19,16 +19,16 @@ updated 1 package in 63.801s`.split('\n'),
 LabDAO OpenLab CLI
 
 VERSION
-  @labdao/openlab-cli/0.0.3 linux-x64 node-v14.19.0
+&nbsp;&nbsp;@labdao/openlab-cli/0.0.3 linux-x64 node-v14.19.0
 
 USAGE
-  $ openlab [COMMAND]
+&nbsp;&nbsp;$ openlab [COMMAND]
 
 TOPICS
-  file  Manage files available to or from OpenLab on IPFS
+&nbsp;&nbsp;file  Manage files available to or from OpenLab on IPFS
 
 COMMANDS
-  help  Display help for openlab.`.split('\n'),
+&nbsp;&nbsp;help  Display help for openlab.`.split('\n'),
   },
   {
     context: `Let's push a file to IPFS...`,
@@ -79,12 +79,16 @@ function paint(line) {
 }
 
 function caret() {
-  return tint('&gt;', 'text-amber-500', true)
+  return tint('&gt;', 'text-amber-200', true)
 }
 
 function bubble(text) {
-  return `<button type="button" class="py-3 px-4 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-800 font-medium rounded-sm text-md text-center mt-2 mr-2 mb-2">🤖💬 ${text}</button>
-  `
+  return `<div class="flex p-4 mb-4 text-sm rounded-lg bg-neutral-700 text-gray-50 w-content" role="alert">
+    <span class="inline flex-shrink-0 mr-3 w-5 h-5">🤖</span>
+    <div>${text}</div>
+  </div>`
+  // return `<button type="button" class="py-3 px-4 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-800 font-medium rounded-sm text-md text-center mt-2 mr-2 mb-2">🤖💬 ${text}</button>
+  // `
 }
 
 @Component({
@@ -136,12 +140,13 @@ export class TermTypist {
       .printContext(cmd.context)
       .typeCommand(cmd.input)
       .printOutput(cmd.output)
+    this.typist.break().pause(500)
   }
 
   async componentDidLoad() {
     this.typist = new TypeIt("#terminal", {
       waitUntilVisible: true,
-      speed: 80,
+      speed: 0,
       startDelay: 900,
       lifeLike: true,
       html: true
