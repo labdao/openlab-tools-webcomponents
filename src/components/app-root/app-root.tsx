@@ -65,7 +65,10 @@ export class AppRoot {
 
     typer = typer
       .pause(500)
-      .type('<span class="text-violet-300 font-bold">&gt; </span>openlab file')
+      .type(
+        '<span class="text-violet-300 font-bold">&gt; </span>openlab file',
+        { spped: 80 }
+      )
       .pause(500)
 
     fileoutput.forEach(line => {
