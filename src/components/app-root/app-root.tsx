@@ -37,7 +37,7 @@ function initialIsCapital(word) {
 function colourise(line) {
   if (!line) return line
   return initialIsCapital(line) ?
-    `<span class="text-amber-300">${line}</span>` :
+    `<span class="text-violet-300">${line}</span>` :
     line
 }
 
@@ -54,7 +54,7 @@ export class AppRoot {
       speed: 80,
       startDelay: 900
     })
-      .type('<span class="text-violet-300 font-bold">&gt; </span>openlab')
+      .type('<span class="text-violet-500 font-bold">&gt; </span>openlab')
       .pause(500)
 
     clioutput.forEach(line => {
@@ -66,7 +66,7 @@ export class AppRoot {
     typer = typer
       .pause(500)
       .type(
-        '<span class="text-violet-300 font-bold">&gt; </span>openlab file',
+        '<span class="text-violet-500 font-bold">&gt; </span>openlab file',
         { spped: 80 }
       )
       .pause(500)
