@@ -1,6 +1,5 @@
 import { Config } from '@stencil/core'
-import tailwindcss from 'tailwindcss'
-import tailwind from 'stencil-tailwind-plugin'
+import tailwind, { tailwindHMR } from 'stencil-tailwind-plugin';
 
 // https://stenciljs.com/docs/config
 export const config: Config = {
@@ -14,12 +13,14 @@ export const config: Config = {
       serviceWorker: null,
       baseUrl: 'https://talos.local/',
     },
+    { type: 'dist-custom-elements' }
   ],
   plugins: [
     tailwind({
       // enableDebug: true,
       minify: true
-    })
+    }),
+    tailwindHMR()
   ],
   devServer: {
     reloadStrategy: 'pageReload'

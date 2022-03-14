@@ -1,6 +1,6 @@
 {
-  "name": "Stencil Starter",
-  "short_name": "Stencil",
+  "name": "openlab.tools",
+  "short_name": "openlab.tools",
   "start_url": "/",
   "display": "standalone",
   "icons": [{

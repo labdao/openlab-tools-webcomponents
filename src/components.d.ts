@@ -6,20 +6,15 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AppRoot {
-    }
     interface OpenlabButton {
     }
     interface TermTypist {
+        "freezeUntilClick": () => Promise<void>;
+        "playbook": { config: {}; plays: { context: string; input: string; output: string[]; emptybefore: boolean; pauseafter: boolean; }[]; };
+        "unfreeze": () => Promise<void>;
     }
 }
 declare global {
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
-    }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
-    };
     interface HTMLOpenlabButtonElement extends Components.OpenlabButton, HTMLStencilElement {
     }
     var HTMLOpenlabButtonElement: {
@@ -33,20 +28,17 @@ declare global {
         new (): HTMLTermTypistElement;
     };
     interface HTMLElementTagNameMap {
-        "app-root": HTMLAppRootElement;
         "openlab-button": HTMLOpenlabButtonElement;
         "term-typist": HTMLTermTypistElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppRoot {
-    }
     interface OpenlabButton {
     }
     interface TermTypist {
+        "playbook"?: { config: {}; plays: { context: string; input: string; output: string[]; emptybefore: boolean; pauseafter: boolean; }[]; };
     }
     interface IntrinsicElements {
-        "app-root": AppRoot;
         "openlab-button": OpenlabButton;
         "term-typist": TermTypist;
     }
@@ -55,7 +47,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "openlab-button": LocalJSX.OpenlabButton & JSXBase.HTMLAttributes<HTMLOpenlabButtonElement>;
             "term-typist": LocalJSX.TermTypist & JSXBase.HTMLAttributes<HTMLTermTypistElement>;
         }

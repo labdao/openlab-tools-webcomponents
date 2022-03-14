@@ -1,3 +1,31 @@
-:host {
-  display: block;
+.outer-frame {
+  @apply w-full min-h-fit m-12 rounded-md font-mono bg-gradient-to-br from-green-400 to-blue-600;
+}
+
+.title-bar {
+  @apply flex flex-row justify-between items-center w-full bg-black bg-opacity-10 rounded-t-md p-2;
+}
+
+.dot-button {
+  @apply flex flex-row justify-between items-center w-full bg-black bg-opacity-10 rounded-t-md p-2;
+}
+
+.title {
+  @apply flex flex-row font-bold text-neutral-700;
+}
+
+.term-pane-frame {
+  @apply relative flex flex-grow min-h-full pt-0 pb-px px-px rounded-b-md text-emerald-200 bg-gradient-to-br from-green-400 to-blue-600;
+}
+
+.term-pane {
+  @apply w-full p-5 bg-black bg-opacity-95 rounded-b-md;
+}
+
+.button-bar {
+  @apply absolute bottom-1 left-3;
+}
+
+.bubble {
+  @apply flex p-4 mb-4 text-sm rounded-lg bg-neutral-700 text-gray-50;
 }
