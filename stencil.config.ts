@@ -7,12 +7,6 @@ export const config: Config = {
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
   outputTargets: [
-    {
-      type: 'www',
-      // comment the following line to disable service workers in production
-      serviceWorker: null,
-      baseUrl: 'https://talos.local/',
-    },
     { type: 'dist-custom-elements' }
   ],
   plugins: [
